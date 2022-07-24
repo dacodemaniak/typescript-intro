@@ -1,6 +1,7 @@
 import path from 'path'
 import { Configuration } from 'webpack'
 import * as webpackDevServer from 'webpack-dev-server'
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Set the webpack configuration
 const config: Configuration  = {
@@ -36,7 +37,10 @@ const config: Configuration  = {
         static: path.join(__dirname, 'dist'),
         compress: true,
         port: 4000
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin()
+    ]
 }
 
 export default config
