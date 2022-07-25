@@ -13,8 +13,8 @@ describe(`Bottle class`, () => {
 
     test(`Bottle contenance should be 1.5`, () => {
         const myBottle = new Bottle()
-        myBottle.contenance = 1.5
-        expect(myBottle.contenance).toBe(1.5)
+        myBottle.contenance = 1000
+        expect(myBottle.contenance).toBe(1000)
     })
 })
 

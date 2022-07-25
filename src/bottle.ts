@@ -1,13 +1,13 @@
 export class Bottle {
-    contenance: number
-    packaging: string
-    closingDevice: string
-    isOpen: boolean
+    public contenance: number
+    public packaging: string
+    public closingDevice: string
+    public isOpen: boolean
 
-    open(): void {
+    public open(): void {
         this.isOpen = true
     }
-    close(): void {
+    public close(): void {
         this.isOpen = false
     }
 }
