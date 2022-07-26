@@ -10,8 +10,19 @@ export class InternCollection {
     }
 
     public addIntern(intern: Intern): void {
-        this.interns.push(intern)
-        this.size = this.size + 1
+        let alreadyExists = false
+
+        for (const existingIntern of this.interns) {
+            if (existingIntern.id === intern.id) {
+                alreadyExists = true
+                break
+            }
+        }
+
+        if (alreadyExists === false) {
+            this.interns.push(intern)
+            this.size = this.size + 1
+        }
     }
 
     public removeIntern(intern: Intern): void {

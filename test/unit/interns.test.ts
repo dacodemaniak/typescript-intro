@@ -16,8 +16,12 @@ describe(
 
         test(`Collection length must be 1 after push an Intern object`, () => {
             const collection: InternCollection = new InternCollection()
+            
             const intern: Intern = new Intern()
+            intern.id = 1
+            intern.setLastname('Aubert')
 
+            collection.addIntern(intern)
             collection.addIntern(intern)
 
             expect(collection.getInterns().length).toBe(1)
