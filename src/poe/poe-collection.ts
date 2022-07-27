@@ -17,6 +17,17 @@ export class POECollection {
      * @todo Remove all doublons before to store
      */
     public setCollection(poes: POE[]): void {
-        this.collection = [... new Set(poes)]
+        for (const poe of poes) {
+            let alreadyExists = false
+            for (const existingPOE of this.collection) {
+                if (existingPOE.getId() === poe.getId()) {
+                    alreadyExists = true
+                    break
+                }
+            }
+            if (alreadyExists === false) {
+                this.collection.push(poe)
+            }
+        }
     }
 }
