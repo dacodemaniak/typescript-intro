@@ -43,13 +43,6 @@ describe(
             expect(collection.getCollection().length).toBe(0)
         })
 
-        test(`setCollection method with an array of same objects should return 1 element`, () => {
-            const collection: POECollection = new POECollection()
-            collection.addPOE(poe, poe)
-
-            expect(collection.getCollection().length).toBe(1)
-        })
-
         test(`Add POE should add poes`, () => {
             const collection : POECollection = new POECollection()
             collection.addPOE(poe, poe, poe1, poe1, poe3, poe1)
