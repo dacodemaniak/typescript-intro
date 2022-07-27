@@ -1,8 +1,11 @@
 import { POE } from "./poe";
 
 export class POECollection {
-    private collection: POE[] = []
+    private collection: POE[]
 
+    public constructor() {
+        this.collection = []
+    }
 
     public getCollection(): POE[] {
         return this.collection
@@ -14,6 +17,6 @@ export class POECollection {
      * @todo Remove all doublons before to store
      */
     public setCollection(poes: POE[]): void {
-        this.collection = [...new Set(poes)]
+        this.collection = [... new Set(poes)]
     }
 }
