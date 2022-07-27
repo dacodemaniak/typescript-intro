@@ -1,39 +1,29 @@
-import { POE } from "../../src/poe"
-
-import * as moment from 'moment'
+import { POE } from '../../src/poe/poe'
 
 describe(`POE class test suite`, () => {
-    test(
-        `POE should be complete`, () => {
-            const poe: POE = new POE()
-            poe.title = 'Fullstack'
-            poe.beginDate = new Date(2022, 6, 18)
-            poe.endDate = new Date(2022, 9, 10)
-            poe.id = 1
+    test(`POE object must be created`, () => {
+        expect(new POE()).toBeTruthy()
+    })
 
-            expect(poe).toBeInstanceOf(POE)
+    test(`POE id must be '1'`, () => {
+        const poe: POE = new POE()
+        poe.id = 1
+        expect(poe.id).toBe(1)
+    })
 
-            const begin: moment.Moment = moment(poe.beginDate)
-            const end: moment.Moment = moment(poe.endDate)
+    test(`id of a POE Object could not be updated`, () => {
+        const poe: POE = new POE()
+        poe.id = 1
+        poe.id = 2
 
-            expect(begin.format('YYYY-MM-DD')).toBe('2022-07-18')
-            expect(end.format('YYYY-MM-DD')).toBe('2022-10-10')
-        }
-    )
+        expect(poe.id).toBe(1)
+    })
 
-    test(
-        `POE should NOT have a endDate lower than begin Date`, () => {
-            
-            const begin: moment.Moment = moment(new Date(2022, 6, 18))
-            const end: moment.Moment = begin.clone().add(57, 'days')
+    test(`id of a POE Object could not be updated even if setter`, () => {
+        const poe: POE = new POE()
+        poe.setId(1)
+        poe.setId(2)
 
-            const poe: POE = new POE()
-            poe.title = 'Fullstack'
-            poe.beginDate = new Date(2022, 6, 18)
-            poe.endDate = new Date(2022, 6, 15)
-            poe.id = 1
-
-            expect(moment(poe.endDate).format('YYYY-MM-DD')).toEqual(end.format('YYYY-MM-DD'))
-        }
-    )
+        expect(poe.getId()).toBe(1)
+    })
 })
