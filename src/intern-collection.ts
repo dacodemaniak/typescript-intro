@@ -3,6 +3,16 @@ import { Intern } from './intern'
 
 export class InternCollection extends Collection {
    
-    public size: number = 0
+    public add(intern: Intern): void {
+        const internNotExists: boolean = this.collection.findIndex(
+            (inIntern: Intern) => {
+                return inIntern.id === intern.id
+            }
+        ) === -1
+
+        if (internNotExists) {
+            super.add(intern)
+        }
+    }
 
 }
