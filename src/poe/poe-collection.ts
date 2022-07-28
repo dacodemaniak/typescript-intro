@@ -1,21 +1,13 @@
+import { Collection } from "../collection/collection";
 import { POE } from "./poe";
 
-export class POECollection {
-    private collection: POE[]
+export class POECollection extends Collection<POE> {
 
-    public constructor() {
-        this.collection = []
-    }
-
-    public getCollection(): POE[] {
-        return this.collection
-    }
-
-    public addPOE(...args: POE[]): void {
-        for (const poe of args) {
-            if (this.collection.includes(poe) === false) {
-                this.collection.push(poe)
-            }
+    public add(poe: POE): void {
+        if (
+            this.collection.findIndex((inPoe: POE) => inPoe.id === poe.id) === -1
+        ) {
+            super.add(poe)
         }
     }
 }

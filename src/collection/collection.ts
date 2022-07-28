@@ -1,13 +1,13 @@
-export class Collection {
-    protected collection: any[] = []
-    
+export abstract class Collection<T> {
+    protected collection: T[] = []
+
     public size: number = 0
 
-    public getCollection(): any[] {
+    public getCollection(): T[] {
         return this.collection
     }
 
-    public add(item: any): void {
+    public add(item: T): void {
         this.collection.push(item)
         this.size = this.size + 1
     }
