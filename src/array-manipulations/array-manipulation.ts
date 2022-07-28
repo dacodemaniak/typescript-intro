@@ -13,7 +13,15 @@ export class ArrayManipulation {
         return nbElements
     }
 
-    
+    public getNiemeNumber(indice: number): number {
+        if (indice < this.nombres.length) {
+           return this.nombres[indice] 
+        }
+
+        throw new Error(`L'indice est en dehors des limites : ${this.nombres.length - 1}`)
+            
+    }
+
     public sum(): number {
         let total = 0
 
@@ -37,9 +45,11 @@ export class ArrayManipulation {
     }
 
     public minWithForOf(): number {
-        let min = this.nombres[0]
+        const myNumbers: number[] = [...this.nombres]
 
-        for(const nombre of this.nombres) {
+        let min = myNumbers[0]
+
+        for(const nombre of myNumbers) {
             if (nombre < min) {
                 min = nombre
             }
