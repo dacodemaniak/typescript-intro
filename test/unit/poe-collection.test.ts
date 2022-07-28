@@ -45,7 +45,11 @@ describe(
 
         test(`Add POE should add poes`, () => {
             const collection : POECollection = new POECollection()
-            collection.addPOE(poe, poe, poe1, poe1, poe3, poe1)
+            collection.add(poe)
+            collection.add(poe)
+            collection.add(poe1)
+            collection.add(poe3)
+            
             expect(collection.getCollection().length).toBe(3)
         })
     }
