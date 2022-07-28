@@ -2,7 +2,7 @@ import { ArrayManipulation } from "../../src/array-manipulations/array-manipulat
 
 describe(
     `Array Manipulation test suite`, () => {
-        
+
         const arrayManipulation = new ArrayManipulation()
         arrayManipulation.setNumbers([15, 10, 23, 58, 1, 3, 9])
         
@@ -17,21 +17,21 @@ describe(
             
             /// Your logic here
             
-            expect(?).toBe(119)
+            expect(arrayManipulation.sum()).toBe(119)
         })
 
         test(`Min of numbers must be 1`, () => {
             
             /// Your logic here
             
-            expect(?).toBe(1)
+            expect(arrayManipulation.min()).toBe(1)
         })
 
         test(`Max of numbers must be 58`, () => {
             
             /// Your logic here
             
-            expect(?).toBe(58)
+            expect(arrayManipulation.max()).toBe(58)
         })
     }
 )

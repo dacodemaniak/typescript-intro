@@ -52,4 +52,15 @@ export class ArrayManipulation {
         return this.nombres.sort()[0]
     }
 
+    public max(): number {
+        let max = this.nombres[0]
+
+        for(let indice = 1; indice < this.nombres.length; indice++) {
+            if (this.nombres[indice] > max) {
+                max = this.nombres[indice]
+            }
+        }
+
+        return max
+    }
 }
