@@ -1,4 +1,4 @@
-import { IModel } from "./inerfaces/i-model"
+import { IModel } from "./interfaces/i-model"
 
 export class Intern implements IModel {
 
