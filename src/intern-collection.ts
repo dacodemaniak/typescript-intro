@@ -1,5 +1,4 @@
 import { Collection } from './collection/collection'
-import { IModel } from './inerfaces/i-model'
 import { Intern } from './intern'
 
 export class InternCollection extends Collection<Intern> {
