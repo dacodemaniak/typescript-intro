@@ -1,3 +1,4 @@
+import { Collection } from "../../src/collection/collection"
 import { Intern } from "../../src/intern"
 import { InternCollection } from "../../src/intern-collection"
 
@@ -5,6 +6,7 @@ import { InternCollection } from "../../src/intern-collection"
 describe(
     `Collection test suite`,
     () => {
+
         test(`Collection should only accept Intern object`, () => {
             const collection: InternCollection = new InternCollection()
 
