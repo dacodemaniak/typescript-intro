@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // Set the webpack configuration
 const config: Configuration  = {
     entry: './src/main.ts',
+    devtool: 'eval-source-map',
     module: {
         rules: [
             {
@@ -39,7 +40,9 @@ const config: Configuration  = {
         port: 4000
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
     ]
 }
 

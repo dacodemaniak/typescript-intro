@@ -11,4 +11,8 @@ export abstract class Collection<T> {
         this.collection.push(item)
         this.size = this.size + 1
     }
+
+
+    public abstract remove(item: T): void
+
 }

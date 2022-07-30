@@ -15,4 +15,5 @@ export class InternCollection extends Collection<Intern> {
         }
     }
 
+    public remove(intern: Intern): void {}
 }
