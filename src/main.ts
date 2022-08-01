@@ -1,15 +1,18 @@
+import { HTMLBuilder } from "./builder/html-builder"
+import { ToTable } from "./interns/to-table"
+
 export class Main {
+    private dock: HTMLElement
+
     public constructor() {
-        const dock: HTMLElement | null = document.querySelector('body')
+        this.dock = document.querySelector('[appDock]')!
 
-        if (dock) {
-            dock.innerHTML = this.sayHello()
-        }
-
+        this.tableBuilder()
     }
 
-    public sayHello(): string {
-        return "Hello Typescript"
+    private tableBuilder(): void {
+        const table: ToTable =  new ToTable()
+        this.dock.appendChild(table.build())
     }
 }
 
