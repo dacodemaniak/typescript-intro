@@ -1,6 +1,4 @@
-import { IModel } from "./interfaces/i-model"
-
-export class Intern implements IModel {
+export class Intern {
 
     public id: number
     private lastname: string
@@ -8,13 +6,6 @@ export class Intern implements IModel {
     public birthDate: Date
     public phoneNumber: string
     public email: string
-
-    getId(): number {
-        throw new Error("Method not implemented.")
-    }
-    setId(id: number) {
-        throw new Error("Method not implemented.")
-    }
     
     public setLastname(lastname: string): void {
         this.lastname = lastname.toUpperCase()

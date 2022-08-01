@@ -1,4 +1,4 @@
-import { Collection } from './collection/collection'
+import { Collection } from '../collection/collection'
 import { Intern } from './intern'
 
 export class InternCollection extends Collection<Intern> {
