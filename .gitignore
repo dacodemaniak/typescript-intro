@@ -3,3 +3,4 @@ node_modules
 
 # Exclude build folder
 dist
+out
